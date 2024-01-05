@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+<form method="post" action="{% url 'users:signin' %}">
+  {% csrf_token %} {% include "form_error.html" %}
+  <div class="mb-3">
+    <label for="username" class="form-label">아이디</label>
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      id="username"
+      value="{{ form.username.value|default_if_none:'' }}"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">비밀번호</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      id="password"
+      value="{{ form.password.value|default_if_none:'' }}"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">로그인</button>
+</form>
+{% endblock %}
