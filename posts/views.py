@@ -5,8 +5,8 @@ from django.views import generic
 from . import models
 
 
-class HomeView(generic.ListView):
-    template_name = "home.html"
+class PostListView(generic.ListView):
+    template_name = "list.html"
 
     def get_queryset(self):
         return models.Post.objects.order_by("-created_at")

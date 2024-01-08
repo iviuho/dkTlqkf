@@ -1,3 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Index</h1>
+<div class="row w-100 justify-content-center">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">게시판</h5>
+        <p class="card-text">마음 속 깊이 묻혀있는 답답한 감정을 익명으로 마음껏 표현하세요!</p>
+        <a href="{% url 'posts:list' %}" class="btn btn-primary">이동</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
