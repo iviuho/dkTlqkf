@@ -32,7 +32,11 @@
           </a>
           <ul class="dropdown-menu">
             {% if user.is_authenticated %}
-            <li><a class="dropdown-item">{{ user.username }}</a></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'users:detail' user.id %}"
+                >{{ user.username }}</a
+              >
+            </li>
             <li>
               <form method="post" action="{% url 'users:logout' %}">
                 {% csrf_token %}

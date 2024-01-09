@@ -6,7 +6,7 @@ from . import models
 
 
 class PostListView(generic.ListView):
-    template_name = "list.html"
+    template_name = "post_list.html"
 
     def get_queryset(self):
         return models.Post.objects.order_by("-created_at")
